@@ -1,16 +1,59 @@
-# React + Vite
+Jomar Philip Balane — Portfolio
+Personal portfolio site built with React and Vite. Live at my-portfolio-two-phi-86.vercel.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech Stack
 
-Currently, two official plugins are available:
+React + Vite — frontend framework and build tool
+React Router — client-side routing and smooth scroll navigation
+EmailJS — contact form email delivery (no backend required)
+Vercel — deployment and hosting
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
 
-## React Compiler
+Animated circuit board canvas background (custom HTML5 Canvas)
+Active navigation state via IntersectionObserver
+Lazy-loaded sections with React.lazy + Suspense
+Fully responsive — tested from 320px to 1440px+
+Working contact form with loading, success, and error states
+CV download button
+SEO meta tags and Open Graph support
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Sections
 
-## Expanding the ESLint configuration
+Hero — introduction, role badge, and CTA buttons
+About — background and personal summary
+Experience — Oracle NetSuite career timeline + certifications
+Skills — technical skills with animated progress bars
+Projects — upcoming projects (in progress)
+Contact — contact form + social links
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Getting Started
+bash# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+Project Structure
+src/
+├── components/
+│   ├── CircuitCanvas.jsx   # Reusable animated canvas background
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Experience.jsx
+│   ├── Skills.jsx
+│   ├── Projects.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+├── App.jsx
+└── main.jsx
+
+Contact
+Jomar Philip Balane
+Oracle NetSuite · Technical Support Engineer
+jomarphilip.balane@gmail.com
+linkedin.com/in/jomar-balane
+github.com/Joooomz
