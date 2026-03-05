@@ -125,10 +125,13 @@ function Hero() {
         }
         .hero-btn-cv:hover { color: #6effc0; border-color: #6effc0; background: rgba(110,255,192,0.04); }
         .hero-btn-cv-icon { font-size: 0.9rem; line-height: 1; }
+
+        /* Hidden by default — only shown on desktop */
         .hero-scroll {
+          display: none;
           position: absolute; bottom: 2.5rem; left: 50%;
           transform: translateX(-50%);
-          display: flex; flex-direction: column;
+          flex-direction: column;
           align-items: center; gap: 0.5rem; z-index: 1;
         }
         .hero-scroll-text {
@@ -155,7 +158,7 @@ function Hero() {
           .hero-tagline { margin-bottom: 3rem; font-size: clamp(1rem, 1.8vw, 1.15rem); }
           .hero-actions { flex-direction: row; width: auto; align-items: center; gap: 1rem; }
           .hero-btn-primary, .hero-btn-outline, .hero-btn-cv { width: auto; }
-          .hero-scroll { display: flex; }
+          .hero-scroll { display: flex; } /* only shows on desktop */
         }
         @media (min-width: 1440px) { .hero-section { padding: 10rem 8rem 5rem; } }
         @media (min-width: 1000px) and (max-width: 1050px) and (max-height: 640px) {
@@ -288,6 +291,7 @@ function Hero() {
           </div>
         </div>
 
+        {/* Scroll indicator — desktop only, hidden on mobile via CSS */}
         <div className="hero-scroll" style={{ opacity: visible ? 1 : 0, transition: 'opacity 1.2s ease 0.8s' }}>
           <span className="hero-scroll-text">scroll</span>
           <div className="hero-scroll-line">

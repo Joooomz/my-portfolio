@@ -21,7 +21,7 @@ const experience = [
     division: "SuiteBuilder & SuiteCloud · Platinum Enterprise",
     period: "Sep 2024 — Present",
     current: true,
-    tags: ["SuiteBuilder", "SuiteCloud", "SuiteFlow", "SuiteScript", "EBP"],
+    tags: ["SuiteBuilder", "SuiteCloud", "SuiteFlow", "SuiteScript", "EBP", "REST and SOAP APIs", "Saved Searches", "Reporting"],
     highlights: [
       "Delivered advanced technical support for SuiteBuilder and SuiteCloud, ensuring smooth system functionality and improved user efficiency.",
       "Resolved ERP issues involving custom forms, workflows, and scripts, enhancing business process reliability.",
@@ -37,7 +37,7 @@ const experience = [
     division: "SuiteBuilder · General Operations",
     period: "Sep 2022 — Sep 2024",
     current: false,
-    tags: ["SuiteBuilder", "Saved Searches", "Custom Forms", "Reporting"],
+    tags: ["SuiteBuilder", "SuiteFlow", "Saved Searches", "Custom Forms", "Reporting", "PDF Templates", "EBP"],
     highlights: [
       "Handled SuiteBuilder customisation requests to improve usability and process fit.",
       "Performed initial technical analysis and escalated complex cases with clear diagnostics.",
