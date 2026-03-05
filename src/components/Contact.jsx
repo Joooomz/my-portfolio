@@ -24,7 +24,7 @@ function Contact() {
   const inView = useInView(sectionRef)
 
   const [formData, setFormData]   = useState({ name: "", email: "", message: "" })
-  const [status, setStatus]       = useState("idle") // idle | sending | sent | error
+  const [status, setStatus]       = useState("idle")
   const [focused, setFocused]     = useState(null)
   const [hoveredLink, setHoveredLink] = useState(null)
   const [btnHovered, setBtnHovered]   = useState(false)
@@ -57,7 +57,7 @@ function Contact() {
   const links = [
     { key: "email",    icon: "✉", label: "jomarphilip.balane@gmail.com", href: "mailto:jomarphilip.balane@gmail.com" },
     { key: "linkedin", icon: "◈", label: "linkedin.com/in/jomar-balane",  href: "https://linkedin.com/in/jomar-balane" },
-    { key: "github",   icon: "⌥", label: "github.com/jomarbalane",        href: "https://github.com/jomarbalane" },
+    { key: "github",   icon: "⌥", label: "github.com/Joooomz",            href: "https://github.com/Joooomz" },
   ]
 
   const isSending = status === "sending"
@@ -131,8 +131,8 @@ function Contact() {
         .contact-field.focused { border-bottom-color: #6effc0; }
         .contact-field-label {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.6rem; letter-spacing: 0.15em;
-          text-transform: uppercase; color: #55556a;
+          font-size: 0.6rem; letter-spacing: 0.12em;
+          color: #55556a;
         }
         .contact-input {
           background: none; border: none; outline: none;
@@ -146,8 +146,8 @@ function Contact() {
         }
         .contact-btn {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.75rem; letter-spacing: 0.15em;
-          text-transform: uppercase; padding: 1rem 2rem;
+          font-size: 0.75rem; letter-spacing: 0.1em;
+          padding: 1rem 2rem;
           background: #6effc0; color: #080810;
           border: 1px solid #6effc0; cursor: pointer;
           text-align: right; width: 100%;
@@ -282,7 +282,6 @@ function Contact() {
           transform: inView ? 'translateY(0)' : 'translateY(24px)',
           transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
         }}>
-          {/* Left */}
           <div className="contact-left">
             <p className="contact-intro">
               I'm open to new opportunities — freelance projects,
@@ -306,7 +305,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* Right — form */}
           <div className="contact-right">
             {status === "sent" ? (
               <div className="contact-success">

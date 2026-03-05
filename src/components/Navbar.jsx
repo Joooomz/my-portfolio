@@ -8,17 +8,14 @@ function Navbar() {
   const navLinks = ["about", "skills", "projects", "contact"]
   const navigate = useNavigate()
 
-  // ── Active section via IntersectionObserver ──────────────────────────
   useEffect(() => {
     const observers = []
     const sectionMap = new Map()
 
-    // Track which sections are visible and how much
     const handleIntersect = (entries) => {
       entries.forEach(entry => {
         sectionMap.set(entry.target.id, entry.intersectionRatio)
       })
-      // Pick the section with the highest visibility
       let best = null, bestRatio = 0
       sectionMap.forEach((ratio, id) => {
         if (ratio > bestRatio) { bestRatio = ratio; best = id }
@@ -41,7 +38,6 @@ function Navbar() {
     return () => observers.forEach(obs => obs.disconnect())
   }, [])
 
-  // ── Close menu on outside click ──────────────────────────────────────
   useEffect(() => {
     if (!menuOpen) return
     const close = (e) => {
@@ -53,7 +49,6 @@ function Navbar() {
     return () => document.removeEventListener('click', close)
   }, [menuOpen])
 
-  // ── Close menu on resize to desktop ─────────────────────────────────
   useEffect(() => {
     const onResize = () => { if (window.innerWidth > 768) setMenuOpen(false) }
     window.addEventListener('resize', onResize)
@@ -99,7 +94,7 @@ function Navbar() {
         .navbar-link {
           font-family: 'IBM Plex Mono', monospace;
           font-size: 0.75rem; letter-spacing: 0.12em;
-          text-transform: uppercase; color: #88889a;
+          color: #88889a;
           text-decoration: none; position: relative;
           padding-bottom: 4px; display: inline-block;
           transition: color 0.2s ease; white-space: nowrap;
@@ -135,7 +130,7 @@ function Navbar() {
         .mobile-menu-link {
           font-family: 'IBM Plex Mono', monospace;
           font-size: 0.85rem; letter-spacing: 0.15em;
-          text-transform: uppercase; color: #88889a;
+          color: #88889a;
           text-decoration: none; padding: 1.1rem 2rem;
           border-bottom: 1px solid #1e1e30;
           display: flex; align-items: center; gap: 0.75rem;
@@ -155,7 +150,6 @@ function Navbar() {
           margin-left: auto; flex-shrink: 0;
         }
 
-        /* WIDTH-BASED BREAKPOINTS */
         @media (min-width: 1440px) {
           .navbar { padding: 1.5rem 8rem; }
           .navbar-logo { font-size: 0.95rem; }
@@ -205,8 +199,6 @@ function Navbar() {
           .mobile-menu { top: 47px; }
           .mobile-menu-link { font-size: 0.72rem; padding: 0.9rem 1.25rem; }
         }
-
-        /* HEIGHT-BASED BREAKPOINTS */
         @media (min-width: 1000px) and (max-width: 1030px) and (max-height: 640px) {
           .navbar { padding: 0.75rem 2rem; }
           .navbar-logo { font-size: 0.75rem; }

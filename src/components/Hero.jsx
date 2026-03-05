@@ -95,8 +95,8 @@ function Hero() {
         }
         .hero-btn-primary {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.75rem; letter-spacing: 0.15em;
-          text-transform: uppercase; padding: 0.9rem 2rem;
+          font-size: 0.75rem; letter-spacing: 0.1em;
+          padding: 0.9rem 2rem;
           background: #6effc0; color: #080810;
           border: 1px solid #6effc0; text-decoration: none;
           cursor: pointer; transition: background 0.2s, color 0.2s;
@@ -105,8 +105,8 @@ function Hero() {
         .hero-btn-primary:hover { background: transparent; color: #6effc0; }
         .hero-btn-outline {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.75rem; letter-spacing: 0.15em;
-          text-transform: uppercase; padding: 0.9rem 2rem;
+          font-size: 0.75rem; letter-spacing: 0.1em;
+          padding: 0.9rem 2rem;
           background: transparent; color: #88889a;
           border: 1px solid #2c2c44; text-decoration: none;
           cursor: pointer; transition: border-color 0.2s, color 0.2s;
@@ -115,8 +115,8 @@ function Hero() {
         .hero-btn-outline:hover { color: #6effc0; border-color: #6effc0; }
         .hero-btn-cv {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.75rem; letter-spacing: 0.15em;
-          text-transform: uppercase; padding: 0.9rem 2rem;
+          font-size: 0.75rem; letter-spacing: 0.1em;
+          padding: 0.9rem 2rem;
           background: transparent; color: #88889a;
           border: 1px solid #2c2c44; text-decoration: none;
           cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s;
@@ -269,7 +269,6 @@ function Hero() {
           </p>
 
           <div className="hero-actions">
-            {/* Fixed: uses React Router + smooth scroll instead of bare href */}
             <a href="/contact" className="hero-btn-primary"
               onClick={(e) => handleScroll(e, 'contact')}>
               Get in touch →

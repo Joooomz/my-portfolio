@@ -120,7 +120,7 @@ function Experience() {
         .exp-period {
           font-family: 'IBM Plex Mono', monospace;
           font-size: 0.68rem; letter-spacing: 0.1em;
-          color: #55556a; text-align: right; white-space: nowrap;
+          color: #6effc0; text-align: right; white-space: nowrap;
         }
         .exp-current-badge {
           display: inline-flex; align-items: center; gap: 0.35rem;
@@ -259,7 +259,7 @@ function Experience() {
             display: block !important;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.65rem; letter-spacing: 0.1em;
-            color: #55556a; margin-bottom: 0.5rem;
+            color: #6effc0; margin-bottom: 0.5rem;
           }
         }
         @media (min-width: 821px) {

@@ -11,7 +11,7 @@ const navLinks = [
 const socialLinks = [
   { label: "Email",    href: "mailto:jomarphilip.balane@gmail.com", icon: "✉" },
   { label: "LinkedIn", href: "https://linkedin.com/in/jomar-balane",  icon: "◈" },
-  { label: "GitHub",   href: "https://github.com/jomarbalane",        icon: "⌥" },
+  { label: "GitHub",   href: "https://github.com/Joooomz",            icon: "⌥" },
 ]
 
 function Footer() {
@@ -63,8 +63,8 @@ function Footer() {
         }
         .footer-nav-link {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.7rem; letter-spacing: 0.12em;
-          text-transform: uppercase; color: #88889a;
+          font-size: 0.7rem; letter-spacing: 0.08em;
+          color: #88889a;
           text-decoration: none; transition: color 0.2s ease;
           border-bottom: 1px solid transparent; padding-bottom: 2px;
           white-space: nowrap;
@@ -73,8 +73,8 @@ function Footer() {
         .footer-nav-link:hover { color: #6effc0; border-bottom-color: #6effc0; }
         .footer-top-btn {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.7rem; letter-spacing: 0.12em;
-          text-transform: uppercase; color: #88889a;
+          font-size: 0.7rem; letter-spacing: 0.08em;
+          color: #88889a;
           background: transparent; border: 1px solid #2c2c44;
           padding: 0.5rem 1rem; cursor: pointer;
           transition: color 0.2s ease, border-color 0.2s ease;
@@ -101,56 +101,32 @@ function Footer() {
         .footer-social-link {
           display: flex; align-items: center; gap: 0.4rem;
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.65rem; letter-spacing: 0.1em;
-          text-transform: uppercase; color: #88889a;
+          font-size: 0.65rem; letter-spacing: 0.08em;
+          color: #88889a;
           text-decoration: none; transition: color 0.2s ease;
           -webkit-tap-highlight-color: transparent;
         }
         .footer-social-link:hover { color: #6effc0; }
         .footer-social-icon { font-size: 0.8rem; color: #6effc0; }
 
-        /* =============================================
-           RESPONSIVE BREAKPOINTS
-        ============================================= */
-
-        @media (min-width: 1440px) {
-          .footer { padding: 3rem 8rem; }
-        }
-        @media (max-width: 1280px) {
-          .footer { padding: 3rem 3rem; }
-        }
+        @media (min-width: 1440px) { .footer { padding: 3rem 8rem; } }
+        @media (max-width: 1280px) { .footer { padding: 3rem 3rem; } }
         @media (max-width: 1024px) {
           .footer { padding: 2.5rem 2rem; }
           .footer-nav { gap: 1.5rem; }
         }
-
-        /* iPad Mini/Air/Pro portrait — stack top row */
         @media (max-width: 820px) {
           .footer { padding: 2.5rem 2rem; }
-          .footer-top {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1.25rem;
-          }
+          .footer-top { flex-direction: column; align-items: center; text-align: center; gap: 1.25rem; }
           .footer-nav { gap: 1.25rem; justify-content: center; }
-          .footer-bottom {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-          }
+          .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
           .footer-socials { justify-content: center; }
         }
-
-        /* Surface Duo, large phones */
         @media (max-width: 600px) {
           .footer { padding: 2rem 1.5rem; }
           .footer-nav { gap: 1rem; }
           .footer-logo { font-size: 0.78rem; }
         }
-
-        /* Mobile phones */
         @media (max-width: 480px) {
           .footer { padding: 2rem 1.25rem; }
           .footer-nav { gap: 0.85rem; }
@@ -160,8 +136,6 @@ function Footer() {
           .footer-social-link { font-size: 0.6rem; }
           .footer-socials { gap: 1.1rem; }
         }
-
-        /* Small phones */
         @media (max-width: 360px) {
           .footer { padding: 1.75rem 1rem; }
           .footer-logo { font-size: 0.7rem; letter-spacing: 0.1em; }
@@ -171,15 +145,11 @@ function Footer() {
           .footer-social-link { font-size: 0.55rem; }
           .footer-socials { gap: 0.85rem; }
         }
-
-        /* Very small phones */
         @media (max-width: 320px) {
           .footer-logo { font-size: 0.65rem; letter-spacing: 0.08em; }
           .footer-nav { gap: 0.6rem; }
-          .footer-nav-link { font-size: 0.55rem; letter-spacing: 0.08em; }
+          .footer-nav-link { font-size: 0.55rem; letter-spacing: 0.06em; }
         }
-
-        /* Nest Hub / short landscape */
         @media (max-height: 640px) and (orientation: landscape) {
           .footer { padding: 1.5rem 2rem; }
           .footer-top { margin-bottom: 1.25rem; }
@@ -188,7 +158,6 @@ function Footer() {
       `}</style>
 
       <footer className="footer">
-        {/* Top row */}
         <div className="footer-top">
           <a
             href="/"
@@ -227,7 +196,6 @@ function Footer() {
 
         <div className="footer-divider" />
 
-        {/* Bottom row */}
         <div className="footer-bottom">
           <p className="footer-copy">
             © {new Date().getFullYear()} Jomar Philip Balane. All rights reserved.
