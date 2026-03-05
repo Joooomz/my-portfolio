@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Dark background -->
+  <rect width="32" height="32" fill="#080810"/>
+  <!-- Mint border -->
+  <rect x="1" y="1" width="30" height="30" stroke="#6effc0" stroke-width="1.5" fill="none"/>
+  <!-- Corner accents -->
+  <rect x="1" y="1" width="5" height="1.5" fill="#6effc0"/>
+  <rect x="1" y="1" width="1.5" height="5" fill="#6effc0"/>
+  <rect x="26" y="1" width="5" height="1.5" fill="#6effc0"/>
+  <rect x="29.5" y="1" width="1.5" height="5" fill="#6effc0"/>
+  <rect x="1" y="29.5" width="5" height="1.5" fill="#6effc0"/>
+  <rect x="1" y="26" width="1.5" height="5" fill="#6effc0"/>
+  <rect x="26" y="29.5" width="5" height="1.5" fill="#6effc0"/>
+  <rect x="29.5" y="26" width="1.5" height="5" fill="#6effc0"/>
+  <!-- JB text -->
+  <text
+    x="16" y="22"
+    font-family="monospace"
+    font-size="13"
+    font-weight="700"
+    fill="#6effc0"
+    text-anchor="middle"
+    letter-spacing="1"
+  >JB</text>
+</svg>

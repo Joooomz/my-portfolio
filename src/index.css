@@ -1,0 +1,48 @@
+/* ── IMPORT FONTS ── */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ── VARIABLES ── */
+:root {
+  --bg:       #080810;
+  --surface:  #0f0f1a;
+  --border:   #1e1e30;
+  --border2:  #2c2c44;
+  --text:     #dddde8;
+  --muted:    #55556a;
+  --muted2:   #88889a;
+  --accent:   #6effc0;
+  --accent2:  #a8ffd8;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-label-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: #6effc0;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
