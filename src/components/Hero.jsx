@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { ArrowRight, Download } from "lucide-react"
 import CircuitCanvas from "./CircuitCanvas"
 
 function Hero() {
@@ -100,7 +101,8 @@ function Hero() {
           background: #6effc0; color: #080810;
           border: 1px solid #6effc0; text-decoration: none;
           cursor: pointer; transition: background 0.2s, color 0.2s;
-          text-align: center; display: block; width: 100%;
+          text-align: center; display: flex; align-items: center;
+          justify-content: center; gap: 0.5rem; width: 100%;
         }
         .hero-btn-primary:hover { background: transparent; color: #6effc0; }
         .hero-btn-outline {
@@ -110,7 +112,8 @@ function Hero() {
           background: transparent; color: #88889a;
           border: 1px solid #2c2c44; text-decoration: none;
           cursor: pointer; transition: border-color 0.2s, color 0.2s;
-          text-align: center; display: block; width: 100%;
+          text-align: center; display: flex; align-items: center;
+          justify-content: center; gap: 0.5rem; width: 100%;
         }
         .hero-btn-outline:hover { color: #6effc0; border-color: #6effc0; }
         .hero-btn-cv {
@@ -124,9 +127,7 @@ function Hero() {
           gap: 0.5rem; width: 100%;
         }
         .hero-btn-cv:hover { color: #6effc0; border-color: #6effc0; background: rgba(110,255,192,0.04); }
-        .hero-btn-cv-icon { font-size: 0.9rem; line-height: 1; }
 
-        /* Hidden by default — only shown on desktop */
         .hero-scroll {
           display: none;
           position: absolute; bottom: 2.5rem; left: 50%;
@@ -158,7 +159,7 @@ function Hero() {
           .hero-tagline { margin-bottom: 3rem; font-size: clamp(1rem, 1.8vw, 1.15rem); }
           .hero-actions { flex-direction: row; width: auto; align-items: center; gap: 1rem; }
           .hero-btn-primary, .hero-btn-outline, .hero-btn-cv { width: auto; }
-          .hero-scroll { display: flex; } /* only shows on desktop */
+          .hero-scroll { display: flex; }
         }
         @media (min-width: 1440px) { .hero-section { padding: 10rem 8rem 5rem; } }
         @media (min-width: 1000px) and (max-width: 1050px) and (max-height: 640px) {
@@ -235,14 +236,7 @@ function Hero() {
       `}</style>
 
       <section className="hero-section">
-        <CircuitCanvas
-          gridSize={80}
-          pulseCount={12}
-          pulseSpeed={0.004}
-          nodeOpacity={0.4}
-          lineOpacity={0.07}
-          glowPulse={true}
-        />
+        <CircuitCanvas gridSize={80} pulseCount={12} pulseSpeed={0.004} nodeOpacity={0.4} lineOpacity={0.07} glowPulse={true} />
 
         <div className="hero-content" style={{
           opacity: visible ? 1 : 0,
@@ -272,26 +266,19 @@ function Hero() {
           </p>
 
           <div className="hero-actions">
-            <a href="/contact" className="hero-btn-primary"
-              onClick={(e) => handleScroll(e, 'contact')}>
-              Get in touch →
+            <a href="/contact" className="hero-btn-primary" onClick={(e) => handleScroll(e, 'contact')}>
+              Get in touch <ArrowRight size={14} strokeWidth={2} />
             </a>
-            <a href="/about" className="hero-btn-outline"
-              onClick={(e) => handleScroll(e, 'about')}>
+            <a href="/about" className="hero-btn-outline" onClick={(e) => handleScroll(e, 'about')}>
               Learn more
             </a>
-            <a
-              href="/jomar-philip-balane-cv.pdf"
-              download="Jomar_Philip_Balane_CV.pdf"
-              className="hero-btn-cv"
-            >
-              <span className="hero-btn-cv-icon">↓</span>
+            <a href="/jomar-philip-balane-cv.pdf" download="Jomar_Philip_Balane_CV.pdf" className="hero-btn-cv">
+              <Download size={14} strokeWidth={2} />
               Download CV
             </a>
           </div>
         </div>
 
-        {/* Scroll indicator — desktop only, hidden on mobile via CSS */}
         <div className="hero-scroll" style={{ opacity: visible ? 1 : 0, transition: 'opacity 1.2s ease 0.8s' }}>
           <span className="hero-scroll-text">scroll</span>
           <div className="hero-scroll-line">

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
+import { Mail, Linkedin, ArrowRight } from "lucide-react"
+import { FaGithub } from "react-icons/fa"
 import CircuitCanvas from "./CircuitCanvas"
 
 const EMAILJS_SERVICE_ID  = "service_2gbjeu6"
@@ -35,18 +37,12 @@ function Contact() {
   const handleSubmit = async () => {
     if (!formData.name || !formData.email || !formData.message) return
     setStatus("sending")
-
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name:  formData.name,
-          from_email: formData.email,
-          message:    formData.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      )
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name:  formData.name,
+        from_email: formData.email,
+        message:    formData.message,
+      }, EMAILJS_PUBLIC_KEY)
       setStatus("sent")
     } catch (err) {
       console.error("EmailJS error:", err)
@@ -55,9 +51,9 @@ function Contact() {
   }
 
   const links = [
-    { key: "email",    icon: "✉", label: "jomarphilip.balane@gmail.com", href: "mailto:jomarphilip.balane@gmail.com" },
-    { key: "linkedin", icon: "◈", label: "linkedin.com/in/jomar-balane",  href: "https://linkedin.com/in/jomar-balane" },
-    { key: "github",   icon: "⌥", label: "github.com/Joooomz",            href: "https://github.com/Joooomz" },
+    { key: "email",    Icon: Mail,     label: "jomarphilip.balane@gmail.com", href: "mailto:jomarphilip.balane@gmail.com" },
+    { key: "linkedin", Icon: Linkedin, label: "linkedin.com/in/jomar-balane",  href: "https://linkedin.com/in/jomar-balane" },
+    { key: "github",   Icon: FaGithub, label: "github.com/Joooomz",            href: "https://github.com/Joooomz" },
   ]
 
   const isSending = status === "sending"
@@ -92,10 +88,8 @@ function Contact() {
           margin-bottom: 3rem; position: relative; z-index: 1;
         }
         .contact-grid {
-          display: grid;
-          grid-template-columns: 1fr 1.4fr;
-          gap: 5rem; align-items: start;
-          position: relative; z-index: 1;
+          display: grid; grid-template-columns: 1fr 1.4fr;
+          gap: 5rem; align-items: start; position: relative; z-index: 1;
         }
         .contact-left { display: flex; flex-direction: column; gap: 2rem; }
         .contact-intro { font-size: 1.05rem; color: #88889a; line-height: 1.8; }
@@ -106,8 +100,8 @@ function Contact() {
         }
         .contact-link:hover { gap: 1rem; }
         .contact-link-icon {
-          font-family: 'IBM Plex Mono', monospace;
-          color: #6effc0; font-size: 1rem; flex-shrink: 0;
+          color: #6effc0; flex-shrink: 0;
+          display: flex; align-items: center;
         }
         .contact-link-text {
           font-family: 'IBM Plex Mono', monospace;
@@ -131,8 +125,7 @@ function Contact() {
         .contact-field.focused { border-bottom-color: #6effc0; }
         .contact-field-label {
           font-family: 'IBM Plex Mono', monospace;
-          font-size: 0.6rem; letter-spacing: 0.12em;
-          color: #55556a;
+          font-size: 0.6rem; letter-spacing: 0.12em; color: #55556a;
         }
         .contact-input {
           background: none; border: none; outline: none;
@@ -150,7 +143,7 @@ function Contact() {
           padding: 1rem 2rem;
           background: #6effc0; color: #080810;
           border: 1px solid #6effc0; cursor: pointer;
-          text-align: right; width: 100%;
+          width: 100%;
           transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
           -webkit-tap-highlight-color: transparent;
           display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;
@@ -160,14 +153,11 @@ function Contact() {
         .contact-btn-spinner {
           width: 12px; height: 12px;
           border: 1.5px solid rgba(8,8,16,0.4);
-          border-top-color: #080810;
-          border-radius: 50%;
-          animation: btnSpin 0.7s linear infinite;
-          flex-shrink: 0;
+          border-top-color: #080810; border-radius: 50%;
+          animation: btnSpin 0.7s linear infinite; flex-shrink: 0;
         }
         .contact-btn:hover:not(:disabled) .contact-btn-spinner {
-          border-color: rgba(110,255,192,0.3);
-          border-top-color: #6effc0;
+          border-color: rgba(110,255,192,0.3); border-top-color: #6effc0;
         }
         .contact-success {
           font-family: 'IBM Plex Mono', monospace;
@@ -196,22 +186,15 @@ function Contact() {
 
         @media (min-width: 1440px) { .contact-section { padding: 8rem 8rem; } }
         @media (max-width: 1280px) { .contact-section { padding: 8rem 3rem; } .contact-grid { gap: 3.5rem; } }
-        @media (max-width: 1024px) {
-          .contact-section { padding: 7rem 2.5rem; }
-          .contact-grid { gap: 2.5rem; }
-          .contact-intro { font-size: 0.95rem; }
-        }
+        @media (max-width: 1024px) { .contact-section { padding: 7rem 2.5rem; } .contact-grid { gap: 2.5rem; } .contact-intro { font-size: 0.95rem; } }
         @media (max-width: 820px) {
           .contact-section { padding: 6rem 2rem; }
           .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
           .contact-title { margin-bottom: 2rem; }
-          .contact-intro { font-size: 0.95rem; }
           .contact-link-text { font-size: 0.7rem; }
         }
         @media (max-width: 600px) {
           .contact-section { padding: 5rem 1.5rem; }
-          .contact-grid { gap: 2rem; }
-          .contact-intro { font-size: 0.9rem; }
           .contact-link-text { font-size: 0.68rem; }
           .contact-field { padding: 1rem 1.25rem; }
           .contact-btn { font-size: 0.7rem; padding: 0.9rem 1.5rem; }
@@ -222,8 +205,6 @@ function Contact() {
           .contact-field { padding: 1rem; }
           .contact-intro { font-size: 0.88rem; }
           .contact-link-text { font-size: 0.65rem; }
-          .contact-input { font-size: 0.95rem; }
-          .contact-textarea { font-size: 0.95rem; }
         }
         @media (max-width: 360px) {
           .contact-section { padding: 5rem 1rem; }
@@ -234,54 +215,35 @@ function Contact() {
         }
         @media (min-width: 1000px) and (max-width: 1050px) and (max-height: 640px) {
           .contact-section { padding: 5rem 2rem; }
-          .contact-title { margin-bottom: 1.5rem; }
           .contact-grid { gap: 2rem; }
-          .contact-intro { font-size: 0.85rem; line-height: 1.6; }
           .contact-field { padding: 0.9rem 1.25rem; }
         }
         @media (min-width: 1260px) and (max-width: 1310px) and (max-height: 820px) {
           .contact-section { padding: 5rem 3rem; }
-          .contact-title { margin-bottom: 2rem; }
           .contact-grid { gap: 3rem; }
         }
         @media (max-height: 500px) and (orientation: landscape) {
           .contact-section { padding: 4.5rem 2rem; }
-          .contact-title { margin-bottom: 1.25rem; }
           .contact-grid { gap: 2rem; }
-          .contact-intro { font-size: 0.82rem; line-height: 1.5; }
           .contact-field { padding: 0.75rem 1rem; }
           .contact-btn { padding: 0.75rem 1.5rem; font-size: 0.68rem; }
         }
 
-        @keyframes btnSpin {
-          to { transform: rotate(360deg); }
-        }
+        @keyframes btnSpin { to { transform: rotate(360deg); } }
       `}</style>
 
       <section ref={sectionRef} className="contact-section" id="contact">
         <CircuitCanvas gridSize={100} pulseCount={4} pulseSpeed={0.003} nodeOpacity={0.2} lineOpacity={0.04} />
 
-        <p className="contact-label" style={{
-          opacity: inView ? 1 : 0,
-          transform: inView ? 'translateY(0)' : 'translateY(16px)',
-          transition: 'opacity 0.6s ease, transform 0.6s ease',
-        }}>
+        <p className="contact-label" style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
           <span className="contact-label-line" />Contact
         </p>
 
-        <h2 className="contact-title" style={{
-          opacity: inView ? 1 : 0,
-          transform: inView ? 'translateY(0)' : 'translateY(20px)',
-          transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s',
-        }}>
+        <h2 className="contact-title" style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s' }}>
           Let's Work<br />Together
         </h2>
 
-        <div className="contact-grid" style={{
-          opacity: inView ? 1 : 0,
-          transform: inView ? 'translateY(0)' : 'translateY(24px)',
-          transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
-        }}>
+        <div className="contact-grid" style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s' }}>
           <div className="contact-left">
             <p className="contact-intro">
               I'm open to new opportunities — freelance projects,
@@ -289,16 +251,15 @@ function Contact() {
             </p>
             <div className="contact-links">
               {links.map((l) => (
-                <a
-                  key={l.key}
-                  href={l.href}
+                <a key={l.key} href={l.href}
                   target={l.key !== 'email' ? '_blank' : undefined}
-                  rel="noreferrer"
-                  className="contact-link"
+                  rel="noreferrer" className="contact-link"
                   onMouseEnter={() => setHoveredLink(l.key)}
                   onMouseLeave={() => setHoveredLink(null)}
                 >
-                  <span className="contact-link-icon">{l.icon}</span>
+                  <span className="contact-link-icon">
+                    <l.Icon size={15} strokeWidth={1.5} />
+                  </span>
                   <span className="contact-link-text">{l.label}</span>
                 </a>
               ))}
@@ -316,38 +277,23 @@ function Contact() {
                 <div className="contact-row">
                   <div className={`contact-field${focused === 'name' ? ' focused' : ''}`}>
                     <label className="contact-field-label">Name</label>
-                    <input
-                      name="name" placeholder="Your name"
-                      value={formData.name} onChange={handleChange}
-                      onFocus={() => setFocused('name')}
-                      onBlur={() => setFocused(null)}
-                      className="contact-input"
-                      disabled={isSending}
-                    />
+                    <input name="name" placeholder="Your name" value={formData.name} onChange={handleChange}
+                      onFocus={() => setFocused('name')} onBlur={() => setFocused(null)}
+                      className="contact-input" disabled={isSending} />
                   </div>
                   <div className={`contact-field${focused === 'email' ? ' focused' : ''}`}>
                     <label className="contact-field-label">Email</label>
-                    <input
-                      name="email" placeholder="you@email.com"
-                      value={formData.email} onChange={handleChange}
-                      onFocus={() => setFocused('email')}
-                      onBlur={() => setFocused(null)}
-                      className="contact-input"
-                      disabled={isSending}
-                    />
+                    <input name="email" placeholder="you@email.com" value={formData.email} onChange={handleChange}
+                      onFocus={() => setFocused('email')} onBlur={() => setFocused(null)}
+                      className="contact-input" disabled={isSending} />
                   </div>
                 </div>
 
                 <div className={`contact-field${focused === 'message' ? ' focused' : ''}`}>
                   <label className="contact-field-label">Message</label>
-                  <textarea
-                    name="message" placeholder="What are you working on?"
-                    value={formData.message} onChange={handleChange}
-                    onFocus={() => setFocused('message')}
-                    onBlur={() => setFocused(null)}
-                    rows={5} className="contact-textarea"
-                    disabled={isSending}
-                  />
+                  <textarea name="message" placeholder="What are you working on?" value={formData.message}
+                    onChange={handleChange} onFocus={() => setFocused('message')} onBlur={() => setFocused(null)}
+                    rows={5} className="contact-textarea" disabled={isSending} />
                 </div>
 
                 {status === "error" && (
@@ -357,8 +303,7 @@ function Contact() {
                   </div>
                 )}
 
-                <button
-                  className="contact-btn"
+                <button className="contact-btn"
                   style={btnHovered && !isSending ? { background: 'transparent', color: '#6effc0' } : {}}
                   onClick={handleSubmit}
                   onMouseEnter={() => setBtnHovered(true)}
@@ -366,12 +311,9 @@ function Contact() {
                   disabled={isSending}
                 >
                   {isSending ? (
-                    <>
-                      <span className="contact-btn-spinner" />
-                      Sending...
-                    </>
+                    <><span className="contact-btn-spinner" />Sending...</>
                   ) : (
-                    <>Send Message →</>
+                    <>Send Message <ArrowRight size={14} strokeWidth={2} /></>
                   )}
                 </button>
               </div>
