@@ -1,48 +1,48 @@
-/* ── IMPORT FONTS ── */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap");
 
-/* ── VARIABLES ── */
-:root {
-  --bg:       #080810;
-  --surface:  #0f0f1a;
-  --border:   #1e1e30;
-  --border2:  #2c2c44;
-  --text:     #dddde8;
-  --muted:    #55556a;
-  --muted2:   #88889a;
-  --accent:   #6effc0;
-  --accent2:  #a8ffd8;
-}
-
-/* ── RESET ── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 18px;
-  line-height: 1.6;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(111, 175, 210, 0.16), transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(33, 93, 134, 0.10), transparent 26%),
+    linear-gradient(90deg, rgba(16, 32, 51, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(16, 32, 51, 0.03) 1px, transparent 1px),
+    #eef1f4;
+  background-size:
+    auto,
+    auto,
+    56px 56px,
+    56px 56px,
+    auto;
+  color: #102033;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+body.menu-open {
+  overflow: hidden;
 }
 
-.section-label-line {
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: #6effc0;
-  margin-right: 0.75rem;
-  vertical-align: middle;
+::selection {
+  background: rgba(111, 175, 210, 0.28);
+  color: #102033;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(111, 175, 210, 0.55);
+  outline-offset: 3px;
 }
