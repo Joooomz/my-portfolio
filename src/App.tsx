@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react"
 import Navbar from "./components/Navbar"
 
 const Hero = lazy(() => import("./components/Hero"))
-const ProofBar = lazy(() => import("./components/ProofBar"))
+const ProofBar = lazy(() => import("./components/Proofbar"))
 const TechStackCarousel = lazy(() => import("./components/TechStackCarousel"))
 const Process = lazy(() => import("./components/Process"))
 const Services = lazy(() => import("./components/Services"))
